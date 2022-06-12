@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Any Meal You Want!!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .card {
+            cursor: pointer;
+        }
+
+        .link-style {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2 class="text-center">Search Your Meal</h2>
+    <!-- search input  -->
+    <div class="input-group mx-auto w-50">
+        <input id="search-field" type="text" class="form-control" placeholder="Search Any Meal You Want!!"
+            aria-label="Search Any Meal You Want!!" aria-describedby="button-search">
+        <button onclick="searchFood()" class="btn btn-outline-secondary" type="button"
+            id="button-search">Search</button>
+    </div>
+
+    <!-- meal details -->
+
+    <div id="modalContainer" class="container">
+
+    </div>
+
+    <!-- search result -->
+    <div class="container my-3">
+
+        <div id="search-result" class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- automatic generated colums by searchFood() function -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="js/mealdb.js"></script>
+</body>
+
+</html>

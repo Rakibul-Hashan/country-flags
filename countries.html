@@ -12,8 +12,7 @@
 <body>
     <h2> Countries </h2>
     <section>
-        <h3>Country Details</h3>
-        <div id="country-details">
+        <div id="country-details" class="modalDialog">
 
         </div>
     </section>
@@ -26,4 +25,81 @@
     <script src="js/countries.js"></script>
 </body>
 
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .tab-content
+    {
+        display:none;
+    }
+    .tab-content.active
+    {
+        display:block;
+    }
+    ul.tabs
+    {
+        list-style-type: none;
+        padding:0;
+        margin-left:0;
+    }
+    li.tab
+    {
+        display:inline-block;
+        padding:10px 15px;
+        cursor: pointer;
+    }
+    li.tab.active
+    {
+        color:grey;
+        border-bottom:1px solid red;
+    }
+
+    </style>
+
+</head>
+<body>
+
+    <ul class="tabs">
+        <li class="tab" data-content-id="tab-content-1">tab 1</li>
+        <li class="tab" data-content-id="tab-content-2">tab 2</li>
+        <li class="tab" data-content-id="tab-content-3">tab 3</li>
+    </ul>
+
+    <div id="tab-content-1" class="tab-content">content 1</div>
+    <div id="tab-content-2" class="tab-content">content 2</div>
+    <div id="tab-content-3" class="tab-content">content 3</div>
+
+    <script>
+        tabs= document.querySelectorAll('.tab');
+        tabContents= document.querySelectorAll('.tab-content');
+
+        tabs.forEach(function(tab){
+            tab.addEventListener('click',function(){
+
+                contentId = this.dataset.contentId;
+                content = document.getElementById(contentId);
+
+                tabContents.forEach(function(content){
+                    content.classList.remove('active');
+                });
+
+                tabs.forEach(function(tab){
+                    tab.classList.remove('active');
+                });
+
+                this.classList.add('active');
+                content.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
 </html>

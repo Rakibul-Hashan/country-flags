@@ -21,7 +21,7 @@ const displayCountries = (countries) => {
             <div class="card-meta">
                 <h4>${country.name.common}</h4>
                 <div onclick="loadCountriesByName('${country.name.common}')" class="button">
-                    Details
+                    <a href="#country-details">Details</a>
                     <div></div>
                 </div>
             </div>
@@ -44,25 +44,14 @@ const displayCountriesByName = (countryDetails) => {
     const countryDetailsDiv = document.getElementById('country-details');
     // const div = document.createElement('div');
     countryDetailsDiv.innerHTML = `
-    <div class="container">
-        <div class="interior">
-            <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
-        </div>
-        </div>
-        <div id="open-modal" class="modal-window">
-        <div>
-            <a href="#" title="Close" class="modal-close">Close</a>
+    <div>	<a href="#close" title="Close" class="close">X</a>
             <div>
-                <img src="${countryDetails.flags.svg}" width="200" />
-                <h5>${countryDetails.name.common}</h5>
+            <h3>Country Details</h3>
+                <img src="${countryDetails.flags.svg}" width="100%" />
+                <h5>Name: ${countryDetails.name.common}</h5>
                 <p>Capital: ${countryDetails.capital[0]}</p>
             </div>
         </div>
-        </div>
-    </div>
-
-
-        
     `;
     // countryDetailsDiv.appendChild(div);
     console.log(countryDetails)
